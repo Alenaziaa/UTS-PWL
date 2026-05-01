@@ -6,7 +6,10 @@
 -->
 <div class="page-hero" style="background:linear-gradient(135deg,#f59e0b,#ef8c00)">
   <h1><i class="fas fa-envelope me-2"></i>Kontak & Pesan Masuk</h1>
-  <p>Kelola informasi kontak dan pesan yang masuk dari pengunjung website.</p>
+  <?php if (session()->get('role') === 'admin'): ?>
+  <p>Kelola informasi kontak dan pesan yang masuk dari email.</p>
+<?php endif; ?>
+  
   <i class="fas fa-headset page-hero-icon"></i>
 </div>
 
@@ -65,6 +68,7 @@
   </div>
 
   <!-- Pesan Masuk -->
+  <?php if (session()->get('role') === 'admin'): ?>
   <div class="col-lg-8 mb-4">
     <div class="card">
       <div class="card-header d-flex justify-content-between align-items-center">
@@ -109,5 +113,38 @@
       </div>
     </div>
   </div>
+  
+  <?php else: ?>
+  
+  <div class="col-lg-8 mb-4">
+  <div class="card">
+    <div class="card-body text-center py-5">
+      <i class="fas fa-lock fa-2x mb-3 text-muted"></i>
+      <h5>Akses Terbatas</h5>
+      <p class="text-muted">Pesan masuk hanya dapat dilihat oleh admin.</p>
+    </div>
+  </div>
+
+  <!-- CTA untuk Guest -->
+<?php if (! session()->get('isLoggedIn')): ?>
+<div class="card" style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:20px;border:none">
+  <div class="card-body text-center py-4">
+    <i class="fas fa-lock fa-2x mb-3" style="color:#6c63ff"></i>
+    <h4 style="color:#fff;font-family:'Poppins',sans-serif">Ingin akses lebih?</h4>
+    <p style="color:rgba(168,178,216,0.8)">Login sebagai Admin untuk melihat Kegiatan, Kontak, dan Dashboard pengelolaan.</p>
+    <a href="<?= base_url('/login') ?>" class="btn" style="background:linear-gradient(135deg,#6c63ff,#a855f7);color:#fff;border-radius:12px;padding:10px 28px;font-weight:600;border:none">
+      <i class="fas fa-sign-in-alt me-2"></i>Login Sekarang
+    </a>
+  </div>
+</div>
+<?php endif; ?>
+
+</div>
+
+
+
+<?php endif; ?>
+
+
 </div>
 <?php $this->endSection() ?>

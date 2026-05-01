@@ -83,6 +83,13 @@ $activePage = $activePage ?? '';
           </a>
         </li>
 
+        <li class="nav-item">
+          <a href="<?= base_url('/kontak') ?>" class="nav-link <?= ($activePage === 'kontak') ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-envelope"></i>
+            <p>Kontak</p>
+          </a>
+        </li>
+
         <?php if (session()->get('isLoggedIn')): ?>
         <!-- ============================================================ -->
         <!-- Menu Admin Only — hanya muncul jika sudah login — Soal 04    -->
@@ -100,13 +107,6 @@ $activePage = $activePage ?? '';
           <a href="<?= base_url('/kegiatan') ?>" class="nav-link <?= ($activePage === 'kegiatan') ? 'active' : '' ?>">
             <i class="nav-icon fas fa-calendar-alt"></i>
             <p>Kegiatan</p>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a href="<?= base_url('/kontak') ?>" class="nav-link <?= ($activePage === 'kontak') ? 'active' : '' ?>">
-            <i class="nav-icon fas fa-envelope"></i>
-            <p>Kontak</p>
           </a>
         </li>
 

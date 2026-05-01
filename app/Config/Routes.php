@@ -23,6 +23,7 @@ $routes->get('/galeri', 'Home::galeri');
 $routes->get('/login', 'Auth::index');
 $routes->post('/login', 'Auth::login');
 $routes->get('/logout', 'Auth::logout');
+$routes->get('/kontak', 'Home::kontak');
 
 // -----------------------------------------------------------------------
 // Protected Routes — hanya Admin (sudah login) yang bisa akses — Soal 02
@@ -30,5 +31,4 @@ $routes->get('/logout', 'Auth::logout');
 $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('/dashboard', 'Home::dashboard');
     $routes->get('/kegiatan', 'Home::kegiatan');
-    $routes->get('/kontak', 'Home::kontak');
 });

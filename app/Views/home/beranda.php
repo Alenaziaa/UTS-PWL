@@ -136,18 +136,4 @@
   </div>
 </div>
 
-<!-- CTA untuk Guest -->
-<?php if (! session()->get('isLoggedIn')): ?>
-<div class="card" style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:20px;border:none">
-  <div class="card-body text-center py-4">
-    <i class="fas fa-lock fa-2x mb-3" style="color:#6c63ff"></i>
-    <h4 style="color:#fff;font-family:'Poppins',sans-serif">Ingin akses lebih?</h4>
-    <p style="color:rgba(168,178,216,0.8)">Login sebagai Admin untuk melihat Kegiatan, Kontak, dan Dashboard pengelolaan.</p>
-    <a href="<?= base_url('/login') ?>" class="btn" style="background:linear-gradient(135deg,#6c63ff,#a855f7);color:#fff;border-radius:12px;padding:10px 28px;font-weight:600;border:none">
-      <i class="fas fa-sign-in-alt me-2"></i>Login Sekarang
-    </a>
-  </div>
-</div>
-<?php endif; ?>
-
 <?php $this->endSection() ?>
