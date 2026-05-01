@@ -88,12 +88,12 @@
     </form>
 
     <!-- Hint kredensial -->
-    <div class="login-hint">
+    <!-- <div class="login-hint">
       <i class="fas fa-info-circle me-1"></i>
       <strong>Kredensial Demo:</strong><br>
       Username: <strong>admin</strong> &nbsp;|&nbsp; Password: <strong>admin123</strong>
     </div>
-  </div>
+  </div> -->
 
   <!-- Back to Home -->
   <div class="back-home">
